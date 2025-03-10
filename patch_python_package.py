@@ -346,7 +346,7 @@ async def install_inject_route(self) -> None:
             self._routes.insert(
                 0,
                 RouteHandler(
-                    self._options.get("baseURL"),
+                    self._browser_context._options.get("baseURL"),
                     "**/*",
                     mapping.wrap_handler(route_handler),
                     False,
