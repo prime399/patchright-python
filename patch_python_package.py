@@ -280,7 +280,9 @@ async def install_inject_route(self) -> None:
     async def route_handler(route: Route) -> None:
             if route.request.resource_type == "document" and route.request.url.startswith("http"):
                 try:
-                    response = await route.fetch(maxRedirects=0)
+                    response = await route.fetch(
+                        # maxRedirects=0
+                    )
                     await route.fulfill(response=response)
                 except:
                     await route.continue_()
@@ -334,7 +336,9 @@ async def install_inject_route(self) -> None:
     async def route_handler(route: Route) -> None:
             if route.request.resource_type == "document" and route.request.url.startswith("http"):
                 try:
-                    response = await route.fetch(maxRedirects=0)
+                    response = await route.fetch(
+                        # maxRedirects=0
+                    )
                     await route.fulfill(response=response)
                 except Exception:
                     await route.continue_()
