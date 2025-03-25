@@ -278,15 +278,13 @@ async def install_inject_route(self) -> None:
     mapping = ImplToApiMapping()
 
     async def route_handler(route: Route) -> None:
-            if route.request.resource_type == "document" and route.request.url.startswith("http"):
-                try:
-                    response = await route.fetch(
-                        # maxRedirects=0
-                    )
-                    await route.fulfill(response=response)
-                except:
+            try:
+                if route.request.resource_type == "document" and route.request.url.startswith("http"):
+                    protocol = route.request.url.split(":")[0]
+                    await route.continue_(url=f"{protocol}://patchright-init-script-inject.internal/")
+                else:
                     await route.continue_()
-            else:
+            except:
                 await route.continue_()
 
     if not self.route_injecting:
@@ -334,15 +332,13 @@ async def install_inject_route(self) -> None:
     mapping = ImplToApiMapping()
     
     async def route_handler(route: Route) -> None:
-            if route.request.resource_type == "document" and route.request.url.startswith("http"):
-                try:
-                    response = await route.fetch(
-                        # maxRedirects=0
-                    )
-                    await route.fulfill(response=response)
-                except Exception:
+            try:
+                if route.request.resource_type == "document" and route.request.url.startswith("http"):
+                    protocol = route.request.url.split(":")[0]
+                    await route.continue_(url=f"{protocol}://patchright-init-script-inject.internal/")
+                else:
                     await route.continue_()
-            else:
+            except:
                 await route.continue_()
 
     if not self.route_injecting and not self.context.route_injecting:
