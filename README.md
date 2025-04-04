@@ -49,7 +49,7 @@ patchright install chromium
 ## Usage
 #### Just change the import and use it like playwright. Patchright is a drop-in-replacement for Playwright!
 
-> [!WARNING]  
+> [!IMPORTANT]  
 > Patchright only patches CHROMIUM based browsers. Firefox and Webkit are not supported.
 
 ```py
@@ -119,6 +119,11 @@ Patchright tweaks the Playwright Default Args to avoid detection by Command Flag
 
 ### General Leaks
 Patchright patches some general leaks in the Playwright codebase. This mainly includes poor setups and obvious detection points.
+
+### Closed Shadow Roots
+Patchright is able to interact with elements in Closed Shadow Roots. Just use normal locators and Patchright will do the rest.
+<br/>
+Patchright is now also able to use XPaths in Closed Shadow Roots.
 
 ---
 
