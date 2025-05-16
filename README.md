@@ -194,6 +194,14 @@ Deployment of new Patchright versions are automatic, but bugs due to Playwright 
 
 ---
 
+---
+
+## MVP
+
+This project is tested with BrowserStack.
+
+---
+
 ## Support our work
 
 If you choose to support our work, please contact [@vinyzu](https://discord.com/users/935224495126487150) or [@steve_abcdef](https://discord.com/users/936292409426477066) on Discord.
@@ -218,3 +226,5 @@ No warranties are provided regarding accuracy, completeness, or suitability for 
 ## Authors
 
 #### Active Maintainer: [Vinyzu](https://github.com/Vinyzu/) </br> Co-Maintainer: [Kaliiiiiiiiii](https://github.com/kaliiiiiiiiii/)
+
+
